@@ -1,4 +1,4 @@
-// models a game of blackjack
+// main class. models a game of blackjack
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Blackjack {
         Player playerTwo = new Player(playerTwoName);
         String playAgain = "y"; // used to determine when the user wants to play again or quit
 
-        while (playAgain.equals("y")) {
+        while (playAgain.contains("y") || playAgain.contains("Y")) {
             gameDeck.reshuffle();
 
             playerOne.addPlayerCard(gameDeck);
@@ -39,11 +39,11 @@ public class Blackjack {
                 blackjack.addTurn();
                 blackjack.showCurrentPlayer(playerOne, playerTwo).addPlayerCard(gameDeck);
 
-                while (hitOrStand.equals("h")) {
+                while (hitOrStand.contains("h") || hitOrStand.contains("H")) {
                     System.out.println(blackjack.showCards(blackjack.showCurrentPlayer(playerOne, playerTwo), playerOne, playerTwo));
                     System.out.println("Do you want to [h]it or [s]tand?");
                     hitOrStand = input.nextLine();
-                    if (hitOrStand.equals("h")) {
+                    if (hitOrStand.contains("h") || hitOrStand.contains("H")) {
                         System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).drawPlayerCard(gameDeck));
                     }
                     if (blackjack.showCurrentPlayer(playerOne, playerTwo).getPlayerPoints() > 21) {

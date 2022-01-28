@@ -1,31 +1,44 @@
-// models a card game
-
+/**
+ * @author Matthew Perry
+ * Description: Game class represents a turn based card game.
+ */
 public class Game {
 
     // if currentPlayer is true, it is player one's turn. if currentPlayer is false, it is player two's turn
-
     private boolean currentPlayer;
     private int turn;
 
-    // constructs a game starting at turn 0 and starting with player one
+    /**
+     * Description: Constructs a game.
+     * Pre-Condition: None.
+     * Post-Condition: A game starting at turn 0 and starting with player one is created.
+     */
     public Game() {
         this.currentPlayer = true;
         this.turn = 0;
     }
 
-    // switches the current player
+    /**
+     * Description: Switches the current player.
+     * Pre-Condition: None.
+     * Post-Condition: The currentPlayer boolean is changed to the opposite of what it currently is.
+     */
     public void switchPlayer() {
-        if (currentPlayer == true) {
-            currentPlayer = false ;
+        if (this.currentPlayer == true) {
+            this.currentPlayer = false ;
         }
-        else if (currentPlayer == false) {
-            currentPlayer = true ;
+        else if (this.currentPlayer == false) {
+            this.currentPlayer = true ;
         }
     }
 
-    // returns the current player
+    /**
+     * Description: Returns the current player.
+     * Pre-Condition: Two players must be the parameters.
+     * Post-Condition: From the two players given as parameters, the current one is returned.
+     */
     public Player showCurrentPlayer(Player playerOne, Player playerTwo) {
-        if (currentPlayer == true) {
+        if (this.currentPlayer == true) {
             return playerOne;
         }
         else {
@@ -33,22 +46,35 @@ public class Game {
         }
     }
 
-    // increases the turn by 1
+    /**
+     * Description: Increases the turn by 1.
+     * Pre-Condition: None.
+     * Post-Condition: Turn is increased by 1.
+     */
     public void addTurn() {
         this.turn++;
     }
 
-    // resets the turn to 0
+    /**
+     * Description: Resets the turn to 0.
+     * Pre-Condition: None.
+     * Post-Condition: Turn is set to 0.
+     */
     public void resetTurn() {
         this.turn = 0;
     }
 
-    // returns a string of both players showing a card or the current player's hand based on the turn
+    /**
+     * Description: Returns a string of both players showing a card or the current player's hand based on the turn.
+     * Pre-Condition: Parameters must all be players.
+     * Post-Condition: A String is returned.
+     */
     public String showCards(Player currentPlayer, Player playerOne, Player playerTwo) {
-
-        if (turn == 0) {
+        // players show cards
+        if (this.turn == 0) {
             return (playerOne.getPlayersName() + " shows: " + playerOne.getPlayersCards() + "\n" + playerTwo.getPlayersName() + " shows: " + playerTwo.getPlayersCards() );
         }
+        // current player's hand is seen
         else {
             return (currentPlayer.getPlayersName() + ", you have " + currentPlayer.getPlayersCards() + " (" + currentPlayer.getPlayerPoints() + ")");
         }

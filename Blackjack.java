@@ -1,7 +1,9 @@
-// main class. models a game of blackjack
-
 import java.util.Scanner;
 
+/**
+ * @author Matthew Perry
+ * Description: Main class. Playable 2 player blackjack game.
+ */
 public class Blackjack {
     public static void main(String[] args)  {
 
@@ -43,6 +45,7 @@ public class Blackjack {
                     System.out.println(blackjack.showCards(blackjack.showCurrentPlayer(playerOne, playerTwo), playerOne, playerTwo));
                     System.out.println("Do you want to [h]it or [s]tand?");
                     hitOrStand = input.nextLine();
+                    // if the input does not contain "h" or "H", the player will stand
                     if (hitOrStand.contains("h") || hitOrStand.contains("H")) {
                         System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).drawPlayerCard(gameDeck));
                     }
@@ -91,7 +94,7 @@ public class Blackjack {
             System.out.println();
             System.out.println(playerOne.getPlayersName() + " has " + playerOne.getWins() + " wins.");
             System.out.println(playerTwo.getPlayersName() + " has " + playerTwo.getWins() + " wins.");
-            // the user is given the option to play again. selecting "n" will close the program and "y" will start a new round
+            // the user is given the option to play again. if the input does not contain "Y" or "y", the game will end
             System.out.println("Play again (y/n)?");
             playAgain = input.nextLine();
 
@@ -105,5 +108,6 @@ public class Blackjack {
             playerTwo.resetPlayerHand();
 
         }
+        input.close();
     }
 }

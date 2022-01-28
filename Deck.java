@@ -1,25 +1,39 @@
-// models a deck of cards
-
 import java.util.ArrayList;
 
+/**
+ * @author Matthew Perry
+ * Description: Deck class represents a deck of playing cards.
+ */
 public class Deck {
 
     private int numberOfCards;
     private ArrayList<Card> cards;
 
-    // constructs a deck that starts with 0 cards
+    /**
+     * Description: Constructs a deck.
+     * Pre-Condition: None.
+     * Post-Condition: A deck with 0 cards in it is created.
+     */
     public Deck() {
         this.numberOfCards = 0;
         this.cards = new ArrayList<Card>();
     }
 
-    // adds a card to the deck
+    /**
+     * Description: Adds a card to the deck.
+     * Pre-Condition: The parameter is a card.
+     * Post-Condition: A card is added to the back of the deck and the number of cards in the deck is increased by 1.
+     */
     public void addCard(Card card) {
         cards.add(card);
         this.numberOfCards += 1;
     }
 
-    // adds the 52 standard playing cards to the deck
+    /**
+     * Description: Adds 52 standard playing cards to the deck.
+     * Pre-Condition: None.
+     * Post-Condition: 52 cards are added to the deck by creating and adding 52 new playing cards.
+     */
     public void addStandard52() {
         String suit = "";
         // the first for loop determines the suit of each new card
@@ -57,22 +71,31 @@ public class Deck {
         }
     }
 
-    // removes a random card from the deck
+    /**
+     * Description: Removes a random card from the deck and returns it.
+     * Pre-Condition: The deck must have at least one card in it.
+     * Post-Condition: The number of cards decreases by one and a random card is removed and returned.
+     */
     public Card drawCard() {
         this.numberOfCards -= 1;
-        int cardNumber = (int) (Math.random() * cards.size());
-        Card drawnCard = cards.get(cardNumber);
-        cards.remove(cardNumber);
+        int cardNumber = (int) (Math.random() * this.cards.size());
+        Card drawnCard = this.cards.get(cardNumber);
+        this.cards.remove(cardNumber);
         return drawnCard;
     }
 
-    // removes all the cards in the deck and adds the 52 standard playing cards to the deck
+    /**
+     * Description: Removes all the cards in the deck and adds the 52 standard playing cards to the deck.
+     * Pre-Condition: None.
+     * Post-Condition: The deck is now 52 standard playing cards with no duplicates.
+     */
     public void reshuffle() {
-        int cardsSize = cards.size();
+        int cardsSize = this.cards.size();
         for (int k = 0; k < cardsSize; k++) {
             this.numberOfCards -= 1;
-            cards.remove(0);
+            this.cards.remove(0);
         }
         this.addStandard52();
     }
+
 }

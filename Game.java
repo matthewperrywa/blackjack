@@ -1,6 +1,6 @@
 /**
  * @author Matthew Perry
- * Description: Game class represents a turn based card game.
+ * Description: Game class represents a 2 player turn based card game.
  */
 public class Game {
 
@@ -21,7 +21,7 @@ public class Game {
     /**
      * Description: Switches the current player.
      * Pre-Condition: None.
-     * Post-Condition: The currentPlayer boolean is changed to the opposite of what it currently is.
+     * Post-Condition: The current player is changed.
      */
     public void switchPlayer() {
         if (this.currentPlayer == true) {

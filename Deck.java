@@ -22,7 +22,7 @@ public class Deck {
     /**
      * Description: Adds a card to the deck.
      * Pre-Condition: The parameter is a card.
-     * Post-Condition: A card is added to the back of the deck and the number of cards in the deck is increased by 1.
+     * Post-Condition: A card is added to the deck and the number of cards in the deck is increased by 1.
      */
     public void addCard(Card card) {
         cards.add(card);
@@ -32,7 +32,7 @@ public class Deck {
     /**
      * Description: Adds 52 standard playing cards to the deck.
      * Pre-Condition: None.
-     * Post-Condition: 52 cards are added to the deck by creating and adding 52 new playing cards.
+     * Post-Condition: 52 new cards are added to the deck.
      */
     public void addStandard52() {
         String suit = "";

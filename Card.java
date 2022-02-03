@@ -21,7 +21,7 @@ public class Card {
 
     /**
      * Description: The card name and suit is returned.
-     * Pre-Condition: The card must have a name and suit assigned to it.
+     * Pre-Condition: None.
      * Post-Condition: A String is returned.
      */
     public String toString() {
@@ -30,7 +30,7 @@ public class Card {
 
     /**
      * Description: The card's value is returned.
-     * Pre-Condition: The card must have a value assigned.
+     * Pre-Condition: None.
      * Post-Condition: An int is returned.
      */
     public int getValue() {

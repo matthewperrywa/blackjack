@@ -22,7 +22,7 @@ public class Card {
     /**
      * Description: The card name and suit is returned.
      * Pre-Condition: None.
-     * Post-Condition: A String is returned.
+     * Post-Condition: None.
      */
     public String toString() {
         return this.cardName + " of " + this.suit;
@@ -31,7 +31,7 @@ public class Card {
     /**
      * Description: The card's value is returned.
      * Pre-Condition: None.
-     * Post-Condition: An int is returned.
+     * Post-Condition: None.
      */
     public int getValue() {
         return this.value;

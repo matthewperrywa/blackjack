@@ -25,8 +25,8 @@ public class Player {
 
     /**
      * Description: Returns the player's name as a String.
-     * Pre-Condition: The player must have a name.
-     * Post-Condition: A String is returned.
+     * Pre-Condition: None.
+     * Post-Condition: None.
      */
     public String getPlayersName() {
         return this.playerName;
@@ -35,7 +35,7 @@ public class Player {
     /**
      * Description: Returns the cards in the player's hand.
      * Pre-Condition: None.
-     * Post-Condition: An ArrayList of Cards is returned.
+     * Post-Condition: None.
      */
     public ArrayList<Card> getPlayersCards() {
         return this.playerCards;
@@ -53,8 +53,9 @@ public class Player {
 
     /**
      * Description: Adds a card to the player's hand and adds the points associated with that card to the player's points.
+     *              The card that is drawn is returned in the form "You drew [card name]".
      * Pre-Condition: The game deck must have at least one card in it.
-     * Post-Condition: Returns a string declaring the card just drawn.
+     * Post-Condition: The player's cards and points are changed. The game deck is also altered, as a card is removed from it.
      */
     public String drawPlayerCard(Deck gameDeck) {
         this.playerCards.add(0, gameDeck.drawCard());
@@ -65,7 +66,7 @@ public class Player {
     /**
      * Description: Returns the player's points.
      * Pre-Condition: None.
-     * Post-Condition: An int is returned.
+     * Post-Condition: None.
      */
     public int getPlayerPoints() {
         return this.playerPoints;
@@ -95,7 +96,7 @@ public class Player {
     /**
      * Description: Returns the player's wins.
      * Pre-Condition: None.
-     * Post-Condition: A double is returned.
+     * Post-Condition: None.
      */
     public double getWins() {
         return this.playerWins;

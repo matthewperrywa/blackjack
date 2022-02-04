@@ -34,8 +34,8 @@ public class Game {
 
     /**
      * Description: Returns the current player.
-     * Pre-Condition: Two players must be the parameters.
-     * Post-Condition: From the two players given as parameters, the current one is returned.
+     * Pre-Condition: None.
+     * Post-Condition: None.
      */
     public Player showCurrentPlayer(Player playerOne, Player playerTwo) {
         if (this.currentPlayer == true) {
@@ -66,8 +66,8 @@ public class Game {
 
     /**
      * Description: Returns a string of both players showing a card or the current player's hand based on the turn.
-     * Pre-Condition: Parameters must all be players.
-     * Post-Condition: A String is returned.
+     * Pre-Condition: None.
+     * Post-Condition: None.
      */
     public String showCards(Player currentPlayer, Player playerOne, Player playerTwo) {
         // players show cards

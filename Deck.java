@@ -21,7 +21,7 @@ public class Deck {
 
     /**
      * Description: Adds a card to the deck.
-     * Pre-Condition: The parameter is a card.
+     * Pre-Condition: None.
      * Post-Condition: A card is added to the deck and the number of cards in the deck is increased by 1.
      */
     public void addCard(Card card) {

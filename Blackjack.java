@@ -47,7 +47,10 @@ public class Blackjack {
                     hitOrStand = input.nextLine();
                     // if the input does not contain "h" or "H", the player will stand
                     if (hitOrStand.contains("h") || hitOrStand.contains("H")) {
-                        System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).drawPlayerCard(gameDeck));
+                        System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).drawPlayerCard(gameDeck) + ".");
+                    }
+                    else {
+                        System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).getPlayersName() + " stands.");
                     }
                     if (blackjack.showCurrentPlayer(playerOne, playerTwo).getPlayerPoints() > 21) {
                         System.out.println(blackjack.showCurrentPlayer(playerOne, playerTwo).getPlayersName() + " busts!");
